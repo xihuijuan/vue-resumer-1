@@ -1,32 +1,33 @@
 <template>
   <div>
     <h2>工作经历</h2>
+    <!-- 已经和StudyHistoryEditor合并为ArrayEditor -->
         <el-form>
-          <div class="container" v-for="(work,index) in workHistory">
+          <div class="container" v-for="(item,index) in items">
             <el-form-item label="公司">
-              <el-input v-model="work.company"></el-input>
+              <el-input v-model="item.company"></el-input>
             </el-form-item>
             <el-form-item label="工作内容">
-              <el-input v-model="work.content"></el-input>
+              <el-input v-model="item.content"></el-input>
             </el-form-item>
-            <i class="el-icon-circle-close" v-on:click="removeWorkHistory(index)"></i>
+            <i class="el-icon-circle-close" v-on:click="removeItemHistory(index)"></i>
           </div>
-            <el-button type="primary" v-on:click="addWorkHistory">增加工作经历</el-button>
+            <el-button type="primary" v-on:click="addItemHistory">增加工作经历</el-button>
         </el-form>
   </div>
 </template>
 <script>
 export default {
-  props:['workHistory'],
+  props:['items'],
   methods: {
-    addWorkHistory(){
-      this.workHistory.push({
+    addItemHistory(){
+      this.items.push({
         company:'',
         content:''
       })
     },
-    removeWorkHistory(index){
-      this.workHistory.splice(index,1)
+    removeItemHistory(index){
+      this.items.splice(index,1)
     }
   }
 }

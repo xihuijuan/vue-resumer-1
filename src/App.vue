@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <Topbar class="topbar" />
+    <Topbar />
     <main>
-      <Editor class="editor" />
-      <Preview class="preview" />
+      <Editor />
+      <Preview />
     </main>
   </div>
 </template>
